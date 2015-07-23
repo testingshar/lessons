@@ -20,6 +20,7 @@ $action = $_POST['act'];
 
 if ($firstnumber == 0 || $secondnumber == 0) {
   echo 'Дальнейших действий смысла нет..... там есть 0';
+  
 } elseif ($action == '+') {
    echo $firstnumber + $secondnumber;
 } elseif ($action == '−') {
