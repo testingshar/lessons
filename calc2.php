@@ -1,3 +1,10 @@
+<?php
+error_reporting(0);
+$firstnumber = $_POST['firstnumber'];
+$secondnumber = $_POST['secondnumber'];
+$action = $_POST['act'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,37 +13,31 @@
 </head>
 <body>
   <form action="calc2.php" method="post">
-      <input type="text" name="firstnumber">
-      <input type="text" name="secondnumber"> =
+    <input type="text" name="firstnumber" value="<?php echo $_POST['firstnumber'];?>" >
+    <input type="text" name="secondnumber" value="<?php echo $_POST['secondnumber'];?>"  > =
 
 <?php
-error_reporting(0);
-$firstnumber = $_POST['firstnumber'];
-$secondnumber = $_POST['secondnumber'];
-$action = $_POST['act'];
-switch ($action) {
-  case '+':
-    echo $firstnumber + $secondnumber;
-    break;
-  case '−':
-      echo $firstnumber - $secondnumber;
-      break;  
-  case '*':
-      echo $firstnumber * $secondnumber;
-      break;  
-  case '/':
-      echo $firstnumber / $secondnumber;
-        break;    
+  switch ($action) {
+    case '+':
+      echo $firstnumber + $secondnumber;
+      break;
+    case '−':
+        echo $firstnumber - $secondnumber;
+        break;  
+    case '*':
+        echo $firstnumber * $secondnumber;
+        break;  
+    case '/':
+        echo $firstnumber / $secondnumber;
+          break;    
 }
 ?>
-
       <br>
       <input type="submit" value="+" name="act">
       <input type="submit" value="−" name="act">
       <input type="submit" value="*" name="act">
       <input type="submit" value="/" name="act">
       <br><br>
-      <input type="reset" value="очистить поля">
   </form>
 </body>
 </html>
