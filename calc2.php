@@ -17,20 +17,18 @@ $action = $_POST['act'];
     <input type="text" name="secondnumber" value="<?php echo $_POST['secondnumber'];?>"  > =
 
 <?php
-  switch ($action) {
-    case '+':
-      echo $firstnumber + $secondnumber;
-      break;
-    case '−':
-        echo $firstnumber - $secondnumber;
-        break;  
-    case '*':
-        echo $firstnumber * $secondnumber;
-        break;  
-    case '/':
-        echo $firstnumber / $secondnumber;
-          break;    
-}
+
+if ($firstnumber == 0 || $secondnumber == 0) {
+  echo 'Дальнейших действий смысла нет..... там есть 0';
+} elseif ($action == '+') {
+   echo $firstnumber + $secondnumber;
+} elseif ($action == '−') {
+  echo $firstnumber - $secondnumber;
+} elseif ($action == '*') {
+  echo $firstnumber * $secondnumber;
+} elseif ($action == '/') {
+  echo $firstnumber / $secondnumber;
+} 
 ?>
       <br>
       <input type="submit" value="+" name="act">
