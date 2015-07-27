@@ -17,18 +17,19 @@ $action = $_POST['act'];
     <input type="text" name="secondnumber" value="<?php echo $_POST['secondnumber'];?>"  > =
 
 <?php
-
-if ($firstnumber == 0 || $secondnumber == 0) {
-  echo 'Дальнейших действий смысла нет..... там есть 0';
-  
-} elseif ($action == '+') {
+if ($action == '+') {
    echo $firstnumber + $secondnumber;
 } elseif ($action == '−') {
   echo $firstnumber - $secondnumber;
 } elseif ($action == '*') {
   echo $firstnumber * $secondnumber;
 } elseif ($action == '/') {
-  echo $firstnumber / $secondnumber;
+  if ($secondnumber == 0) {
+    echo 'Нельзя делить на 0';
+  } else {
+  echo $firstnumber / $secondnumber;  
+  }
+  
 } 
 ?>
       <br>
