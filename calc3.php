@@ -31,9 +31,9 @@ switch ($action) {
 </head>
 <body>
     <form action="calc3.php" method="post">
-        <input type="text" name="firstnumber" value=" <?php echo $firstnumber; ?>" >
+        <input type="text" name="firstnumber" value="<?php echo $firstnumber;?>" >
         <?=$action?>
-        <input type="text" name="secondnumber" value=" <?php echo $secondnumber; ?>" >  =
+        <input type="text" name="secondnumber" value="<?php echo $secondnumber;?>" >  =
         <?php echo $result; ?>
         <br>
         <input type="submit" value="+" name="act">
