@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 $SESSION['login'] = 'vasja';
 if (isset($_COOKIE['count'])) {
