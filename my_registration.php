@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 $SESSION['login'] = 'vasjatka';
 //$login = $_POST['login'];
