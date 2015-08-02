@@ -2,7 +2,7 @@
 error_reporting(E_ALL | E_STRICT);
 
 if (isset($_POST['login']) && $_POST['login'] != '') {
-    // Здесь логика авторизации
+    setcookie('vasja', $_POST['login'], time()+60*60*24);
 }
 
 ?>
