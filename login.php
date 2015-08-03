@@ -1,16 +1,15 @@
 <?php 
 error_reporting(E_ALL | E_STRICT);
-
-if (isset($_POST['login']) && $_POST['login'] != '') {
-    if (isset($_POST['passwrd']) && $_POST['passwrd'] != '') {
-    setcookie($_POST['login'], $_POST['passwrd'], time()+60*60*24);
-    }
-}
 session_start();
 if (!empty($_POST['login']) && !empty($_POST['passwrd'])) {
     $_SESSION['username'] = $_POST['login'];
 }
-
+if (isset($_POST['login']) && $_POST['login'] != '') {
+    if (isset($_POST['passwrd']) && $_POST['passwrd'] != '') {
+    setcookie($_POST['login'], $_POST['passwrd'], time()+60*60*24);
+    header("Location: a.php");
+    }
+}
 
 ?>
 <!DOCTYPE html>
