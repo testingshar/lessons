@@ -5,6 +5,14 @@ error_reporting(E_ALL | E_STRICT);
 // незабыв удалить данные, о посещении предыдущей.
 // Страница должна быть недоступна незареганым юзерам, 
 // также как и index.php
+session_start();
+if (isset($_POST['login'])) {
+    $_SESSION['username'] = $_POST['login'];
+    echo 'Ваш логин' . $_SESSION['username'];
+} 
+	
+
+
 
 ?>
 <!DOCTYPE html>
@@ -16,14 +24,9 @@ error_reporting(E_ALL | E_STRICT);
 <body>
 	<!-- Здесь вид, как на слайде. -->
 	<h1>Вход на сайт</h1>	
-	<?php
-	if (!empty($_COOKIE['login'])) {
-		echo 'Вы вошли сюда как ' . $_COOKIE['login'];
-	}
-	
-	?>
-
-<a href="logout.php">Выход</a>
-	
+	<br><br><br>
+	<?php echo 'Ваш логин ' . $_SESSION['username']; ?>
+	<br><br><br>
+	<a href="logout.php">Выход с сайта</a>
 </body>
 </html>
