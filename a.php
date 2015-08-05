@@ -8,13 +8,15 @@ error_reporting(E_ALL | E_STRICT);
 session_start();
 if (isset($_POST['login'])) {
     $_SESSION['username'] = $_POST['login'];
-    echo 'Ваш логин' . $_SESSION['username'];
 } 
+if (!isset($_COOKIE['login'])) {
+	//header('Location: index.php');
+}
 	
-
-
-
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +25,12 @@ if (isset($_POST['login'])) {
 </head>
 <body>
 	<!-- Здесь вид, как на слайде. -->
-	<h1>Вход на сайт</h1>	
+	<h1>Страница А</h1>
+	<br>
+	<?php echo 'Вы вошли как ' . $_SESSION['username']; ?>
 	<br><br><br>
-	<?php echo 'Ваш логин ' . $_SESSION['username']; ?>
-	<br><br><br>
+	А и <a href="b.php">Б </a>сидели на трубе
+	<br><br>
 	<a href="logout.php">Выход с сайта</a>
 </body>
 </html>
