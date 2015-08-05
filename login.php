@@ -7,7 +7,7 @@ if (!empty($_POST['login']) && !empty($_POST['passwrd'])) {
 if (isset($_POST['login']) && $_POST['login'] != '') {
     if (isset($_POST['passwrd']) && $_POST['passwrd'] != '') {
     setcookie($_POST['login'], $_POST['passwrd'], time()+60*60*24);
-    $_COOKIE['login'] = $_POST['login'];
+    //$_COOKIE['login'] = $_POST['login'];
     header("Location: a.php");
     }
 }

@@ -8,14 +8,19 @@ error_reporting(E_ALL | E_STRICT);
 session_start();
 if (isset($_POST['login'])) {
     $_SESSION['username'] = $_POST['login'];
-    $_COOKIE['username'] = $_POST['login'];
+    
 } 
-if (empty($_COOKIE['username'])) {
+/*
+if ($_COOKIE['login'] == '') {
     header("Location: index.php");
     exit();
 } else {
+    $_COOKIE['login'] = $_POST['login'];
     setcookie("pageA", "a.php", time()+86400);
 }
+*/
+
+
 
 
 	
