@@ -1,15 +1,14 @@
 <?php 
 error_reporting(E_ALL | E_STRICT);
+
 session_start();
-if (!empty($_POST['login']) && !empty($_POST['passwrd'])) {
+if (isset($_POST['login']) && $_POST['login'] != '') {
     $_SESSION['username'] = $_POST['login'];
 }
-if (isset($_POST['login']) && $_POST['login'] != '') {
-    if (isset($_POST['passwrd']) && $_POST['passwrd'] != '') {
-    setcookie($_POST['login'], $_POST['passwrd'], time()+60*60*24);
-    //$_COOKIE['login'] = $_POST['login'];
+
+if (!empty($_SESSION['username'])) {
     header("Location: a.php");
-    }
+    exit();
 }
 
 ?>
@@ -26,10 +25,6 @@ if (isset($_POST['login']) && $_POST['login'] != '') {
         <label for="nickName">Введите имя:</label>
         <br>
         <input type="text" name="login" id="nickName">
-        <br>
-        <label for="passwrd">Введите пароль:</label>
-        <br>
-        <input type="password" name="passwrd" id="passwrd">
         <br>
         <label>
             <input type="checkbox" name="remember" checked> Запомнить меня

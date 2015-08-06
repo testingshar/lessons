@@ -6,28 +6,7 @@ error_reporting(E_ALL | E_STRICT);
 // Страница должна быть недоступна незареганым юзерам, 
 // также как и index.php
 session_start();
-if (isset($_POST['login'])) {
-    $_SESSION['username'] = $_POST['login'];
-    
-} 
-/*
-if ($_COOKIE['login'] == '') {
-    header("Location: index.php");
-    exit();
-} else {
-    $_COOKIE['login'] = $_POST['login'];
-    setcookie("pageA", "a.php", time()+86400);
-}
-*/
-
-
-
-
-	
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +16,10 @@ if ($_COOKIE['login'] == '') {
 <body>
 	<!-- Здесь вид, как на слайде. -->
 	<h1>Страница А</h1>
-	<br>
-	<?php echo 'Вы вошли как ' . $_SESSION['username']; ?>
-	<br><br><br>
-	А и <a href="b.php">Б </a>сидели на трубе
+	А и <a href="b.php"> Б </a> сидели на трубе
 	<br><br>
-	<a href="logout.php">Выход с сайта</a>
+	Вы вошли как <b><?php echo $_SESSION['username']; ?></b>
+	<br>
+	<a href="logout.php">Выход</a>
 </body>
 </html>
