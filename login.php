@@ -30,4 +30,4 @@ if (!empty($_SESSION['username'])) {
         <input type="submit" value="Войти">
     </form>
 </body>
-</html>
+</html> 

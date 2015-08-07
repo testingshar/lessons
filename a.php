@@ -5,7 +5,9 @@ error_reporting(E_ALL | E_STRICT);
 // незабыв удалить данные, о посещении предыдущей.
 // Страница должна быть недоступна незареганым юзерам, 
 // также как и index.php
-session_start();
+session_start(); 
+setcookie("pageA", "a.php", time()+60*60*24);
+echo $_COOKIE['pageA'];
 ?>
 
 <!DOCTYPE html>

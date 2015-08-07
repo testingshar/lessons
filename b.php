@@ -6,6 +6,8 @@ error_reporting(E_ALL | E_STRICT);
 // Страница должна быть недоступна незареганым юзерам, 
 // также как и index.php
 session_start();
+setcookie("pageB", "b.php", time()+60*60*24);
+echo $_COOKIE['pageB']; 
 ?>
 
 <!DOCTYPE html>

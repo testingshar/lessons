@@ -4,4 +4,6 @@ error_reporting(E_ALL | E_STRICT);
 session_start(); 
 unset($_SESSION['username']);
 session_destroy();
-header("Location: index.php");
+setcookie("pageA", false, time()-1);
+setcookie("pageB", false, time()-1);
+header("Location: index.php"); 
