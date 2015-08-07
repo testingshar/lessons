@@ -7,6 +7,7 @@ error_reporting(E_ALL | E_STRICT);
 // также как и index.php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

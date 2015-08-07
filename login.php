@@ -1,11 +1,9 @@
 <?php 
 error_reporting(E_ALL | E_STRICT);
-
 session_start();
 if (isset($_POST['login']) && $_POST['login'] != '') {
     $_SESSION['username'] = $_POST['login'];
 }
-
 if (!empty($_SESSION['username'])) {
     header("Location: a.php");
     exit();
@@ -20,7 +18,6 @@ if (!empty($_SESSION['username'])) {
 </head>
 <body>
     <h1>Вход на сайт</h1>
-
     <form method="post">
         <label for="nickName">Введите имя:</label>
         <br>
