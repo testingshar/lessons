@@ -8,7 +8,6 @@ if (!empty($_SESSION['username'])) {
     header("Location: a.php");
     exit();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
