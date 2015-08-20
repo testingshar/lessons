@@ -2,7 +2,9 @@
 error_reporting(E_ALL | E_STRICT);
 session_start();
 if (isset($_POST['login']) && $_POST['login'] != '') {
-    // Здесь логика авторизации
+    if (isset($_POST['remember'])) {
+        setcookie('sid', session_id(), time()+60*60*24);
+    }
     $_SESSION['user'] = $_POST['login'];
     header('Location: a.php');
     exit();

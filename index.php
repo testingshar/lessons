@@ -1,3 +1,10 @@
 <?php
 error_reporting(E_ALL | E_STRICT);
-header('Location: login.php');// для начала просто редирект на форму авторизации
+session_start();
+if ($_COOKIE['sid'] == session_id()) {
+	header('Location: a.php');
+} else {
+	header('Location: login.php');
+}
+
+
