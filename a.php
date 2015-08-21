@@ -3,7 +3,9 @@ error_reporting(E_ALL | E_STRICT);
 
 session_start();
 setcookie('pageA', 'a.php', time()+60*60*24);
-
+if (empty($_SESSION['user'])) {
+	header('Location: login.php');
+}
 
 ?>
 <!DOCTYPE html>
