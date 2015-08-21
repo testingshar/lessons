@@ -1,18 +1,12 @@
 <?php
 error_reporting(E_ALL | E_STRICT);
-// Здесь обработка запроса страницы.
-// Запомнить в куки что мы были на этой странице,
-// незабыв удалить данные, о посещении предыдущей.
-// Страница должна быть недоступна незареганым юзерам, 
-// также как и index.php
+
 session_start();
 setcookie('pageB', 'b.php', time()+60*60*24);
-$_COOKIE['name'] = $_SESSION['user'];
-echo $_COOKIE['name'] . "<br>";
-var_dump($_SESSION['user']);
-if (empty($_COOKIE['name'])) {
-	header('Location: index.php');
+if (empty($_SESSION['user'])) {
+	header('Location: login.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
