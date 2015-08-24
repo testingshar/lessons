@@ -1,14 +1,18 @@
 <?php 
 error_reporting(E_ALL | E_STRICT);
+if (isset($_COOKIE['sid']) && $_COOKIE['sid'] != session_id()) {
+    session_id($_COOKIE['sid']);    
+}
 session_start();
+
 if (isset($_POST['login']) && $_POST['login'] != '') {
     if (isset($_POST['remember'])) {
         setcookie('sid', session_id(), time()+60*60*24);
     }
     $_SESSION['user'] = $_POST['login'];
     header('Location: a.php');
-    exit();
 }
+
 
 ?>
 <!DOCTYPE html>

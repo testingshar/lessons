@@ -1,10 +1,10 @@
 <?php
 error_reporting(E_ALL | E_STRICT);
+if (isset($_COOKIE['sid']) && $_COOKIE['sid'] != session_id()) {
+	session_id($_COOKIE['sid']);
+}
 session_start();
-if ($_COOKIE['sid'] == session_id()) {
-	header('Location: a.php');
-} else {
+if (empty($_COOKIE['sid']) && empty($_SESSION['user'])) {
 	header('Location: login.php');
 }
-
 
