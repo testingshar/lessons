@@ -4,7 +4,6 @@ if (isset($_COOKIE['sid']) && $_COOKIE['sid'] != session_id()) {
     session_id($_COOKIE['sid']);    
 }
 session_start();
-
 if (isset($_POST['login']) && $_POST['login'] != '') {
     if (isset($_POST['remember'])) {
         setcookie('sid', session_id(), time()+60*60*24);
@@ -12,7 +11,6 @@ if (isset($_POST['login']) && $_POST['login'] != '') {
     $_SESSION['user'] = $_POST['login'];
     header('Location: a.php');
 }
-
 
 ?>
 <!DOCTYPE html>
