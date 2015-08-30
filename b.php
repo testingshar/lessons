@@ -23,6 +23,8 @@ if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
     <h1>Страница Б</h1>
     <a href="a.php">А</a> и Б сидели на трубе
     <br>
+    <a href="setting.php">Страница оформления</a>
+    <br>
     Вы вошли как => <b><?php echo $_SESSION['user'];?></b>
     <br>
     <a href="logout.php">Выход</a>
