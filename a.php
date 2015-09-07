@@ -12,9 +12,6 @@ if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
     exit();
 }
 
-if (isset($_COOKIE['color'])) {
-    setcookie('color', 'select', time()+60*60*24);
-}
 
 ?>
 <!DOCTYPE html>

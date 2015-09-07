@@ -30,7 +30,6 @@ if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
         <option value=" <?php setcookie('color', 'style02.css', time()+60*60*24);?> " name="style02">Стиль 2</option>
         <option value=" <?php setcookie('color', 'style03.css', time()+60*60*24);?> " name="style03">Стиль 3</option>
     </select>
-
     <br><br>
     <a href="a.php">А</a> и <a href="b.php">Б</a> сидели на трубе
     <br><br>
