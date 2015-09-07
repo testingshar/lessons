@@ -26,13 +26,6 @@ if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
     <title>Файл настроек</title>
     <!--<link href="style.css" type="text/css" rel="stylesheet">-->
 
-    <?php
-
-
-
-    ?>
-    
-
 </head>
 <body>
 <form action="setting.php">

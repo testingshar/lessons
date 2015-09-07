@@ -26,6 +26,7 @@ if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
     <meta charset="UTF-8">
     <title>Страница А</title>
 <!--<link href="style03.css" type="text/css" rel="stylesheet">-->
+<link rel="stylesheet" href="<?php echo $_COOKIE['color']; ?>">
 </head>
 <body>
 
