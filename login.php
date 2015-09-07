@@ -18,7 +18,6 @@ if (isset($_POST['login']) && $_POST['login'] != '') {
 <head>
     <meta charset="UTF-8">
     <title>Вход</title>
-    <!--<link href="style01.css" rel="stylesheet">-->
 </head>
 <body>
     <h1>Вход на сайт</h1>

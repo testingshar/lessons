@@ -10,13 +10,10 @@ setcookie('BackUrl', 'a.php', time()+60*60*24);
 if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
     header('Location: login.php');
     exit();
-//require "style01.css";    
+}
 
-    if (isset($_COOKIE['style03'])) {
-       ?> 
-       <link href="style03.css" type="text/css" rel="stylesheet">
-       <?php
-    }
+if (isset($_COOKIE['color'])) {
+    setcookie('color', 'select', time()+60*60*24);
 }
 
 ?>
@@ -25,8 +22,8 @@ if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
 <head>
     <meta charset="UTF-8">
     <title>Страница А</title>
-<!--<link href="style03.css" type="text/css" rel="stylesheet">-->
-<link rel="stylesheet" href="<?php echo $_COOKIE['color']; ?>">
+
+<link rel="stylesheet" href=" <?php echo $_COOKIE['color']; ?> "> 
 </head>
 <body>
 

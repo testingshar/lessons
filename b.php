@@ -17,6 +17,7 @@ if (empty($_SESSION['user']) && empty($_COOKIE['sid'])) {
 <head>
     <meta charset="UTF-8">
     <title>Страница Б</title>
+    <link rel="stylesheet" href=" <?php echo $_COOKIE['color']; ?> "> 
 </head>
 <body>
     <!-- Здесь вид, как на слайде. -->
